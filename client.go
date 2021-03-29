@@ -14,6 +14,6 @@ func main() {
 	ctx :=context.Background()
 	con,_:=grpc.Dial(":8085" , grpc.WithInsecure())
 	fu :=pb.NewStringServicesClient(con)
-	rep , _ :=fu.Concat(ctx , &pb.StringRequest{A: "a" , B: "b"})
+	rep , _ :=fu.HealtStatus(ctx , &pb.HealthRequest{A: "a"})
 	fmt.Println(rep)
 }

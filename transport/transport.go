@@ -11,11 +11,11 @@ func DecodString (ctx context.Context, req interface{}) (request interface{}, er
 }
 
 func DecodeHealth (ctx context.Context, req interface{}) (request interface{}, err error) {
-	request = req.(gproto.HealthRequest)
+	request = req.(*gproto.HealthRequest)
 	return
 }
 func HealthEncode (ctx context.Context, rep interface{}) (response interface{}, err error){
-	response = rep.(gproto.HealthResponse)
+	response = rep.(*gproto.HealthResponse)
 	return
 }
 func EncodString (ctx context.Context, rep interface{}) (response interface{}, err error){
