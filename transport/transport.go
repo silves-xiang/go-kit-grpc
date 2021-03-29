@@ -6,7 +6,7 @@ import (
 )
 
 func DecodString (ctx context.Context, req interface{}) (request interface{}, err error) {
-	request = req.(gproto.StringRequest)
+	request = req.(*gproto.StringRequest)
 	return
 }
 
@@ -19,6 +19,6 @@ func HealthEncode (ctx context.Context, rep interface{}) (response interface{}, 
 	return
 }
 func EncodString (ctx context.Context, rep interface{}) (response interface{}, err error){
-	response = rep.(gproto.StringResponse)
+	response = rep.(*gproto.StringResponse)
 	return
 }
