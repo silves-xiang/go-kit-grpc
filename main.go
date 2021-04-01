@@ -4,6 +4,7 @@ import(
 	"bkgrpc/services"
 	"bkgrpc/endpoint"
 	"google.golang.org/grpc"
+	_"bkgrpc/register"
 	"bkgrpc/proto"
 	"log"
 	"net"
